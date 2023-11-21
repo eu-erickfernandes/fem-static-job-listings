@@ -22,8 +22,8 @@ Users should be able to:
 
 ### Built with
 
-
+- React with Vite
 
 ### Links
 
-- Live Site URL: 
+- Live Site URL: [https://fem-static-job-listings-psi.vercel.app/](https://fem-static-job-listings-psi.vercel.app/)
