@@ -1,0 +1,6 @@
+.banner{
+    height: 156px;
+    object-fit: cover;
+    object-position: right;
+    width: 100%;
+}
