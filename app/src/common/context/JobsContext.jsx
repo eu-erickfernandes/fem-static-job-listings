@@ -1,28 +1,47 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const JobsContext = createContext()
 
 export const JobsProvider = ({ children }) => {
-    const [filters, setFilters] = useState([])
     const [filteredJobs, setFilteredJobs] = useState([])
+    const [filters, setFilters] = useState([])
 
-    const addFilter = (filter) => {
-        setFilters([...filters, filter])
-    }
-
-    const removeFilter = (filter) => {
-        
+    const getData = () => {
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => setFilteredJobs(data))
     }
 
     useEffect(() => {
-        fetch('http://localhost:3000/jobs')
-            .then(response => response.json())
-            .then(data => setFilteredJobs(data))
-    }, [])
+        getData()
+        applyFilters()
+    }, [filters])
+
+
+    const addFilter = (newFfilter) => {
+        !filters.some((filter) => filter.value === newFfilter.value) ? setFilters([...filters, newFfilter]) : null
+    }
+
+    const removeFilter = (currentFilter) => {
+        setFilters(filters.filter(filter => filter.value !== currentFilter.value))
+    }
+
+    const applyFilters = () => {
+        
+    }
 
     return (
-        <JobsContext.Provider value={{ filteredJobs, filters, addFilter, removeFilter }}>
+        <JobsContext.Provider value={{ 
+            filteredJobs,
+            filters,
+            addFilter,
+            removeFilter, 
+        }}>
             { children }
         </JobsContext.Provider>
     )
+}
+
+export const useJobsContext = () => {
+    return useContext(JobsContext)
 }

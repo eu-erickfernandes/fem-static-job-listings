@@ -1,0 +1,22 @@
+.filtersWrapper{
+    box-sizing: border-box;
+    padding-inline: 1.5rem;
+
+    &:has(ul:empty){
+        display: none;
+    }
+}
+
+.filtersContainer{
+    align-items: center;
+    background-color: var(--clr-white);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.fitlersList{
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}

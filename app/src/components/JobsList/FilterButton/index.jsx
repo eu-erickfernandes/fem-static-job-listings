@@ -1,9 +1,9 @@
-import { useContext, useState } from "react"
-import { JobsContext } from "../../../common/context/JobsContext"
+import { useState } from "react"
+import { useJobsContext } from "../../../common/context/JobsContext"
 
 const FilterButton = ({ category, value }) => {
     const [selected, setSelected] = useState(false)
-    const { filters, addFilter, removeFilter } = useContext(JobsContext)
+    const { filters, addFilter, removeFilter } = useJobsContext()
 
     const handleClick = () => {
         const filter = {
@@ -16,7 +16,7 @@ const FilterButton = ({ category, value }) => {
     }
 
     return (
-        <button onClick={ handleClick }>{ category }: { value }</button>
+        <button onClick={ handleClick }>{ category }: { value } --- { selected.toString() }</button>
     )
 }
 
