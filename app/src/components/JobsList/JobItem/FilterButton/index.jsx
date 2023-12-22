@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { useJobsContext } from "../../../common/context/JobsContext"
+import { useJobsContext } from "../../../../common/context/JobsContext"
+import styles from './FilterButton.module.css'
 
 const FilterButton = ({ category, value }) => {
     const [selected, setSelected] = useState(false)
@@ -16,7 +17,7 @@ const FilterButton = ({ category, value }) => {
     }
 
     return (
-        <button onClick={ handleClick }>{ category }: { value } --- { selected.toString() }</button>
+        <button className={ styles.filterButton } onClick={ handleClick }>{ category }: { value } --- { selected.toString() }</button>
     )
 }
 

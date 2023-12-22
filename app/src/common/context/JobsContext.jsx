@@ -15,7 +15,7 @@ export const JobsProvider = ({ children }) => {
     useEffect(() => {
         getData()
         applyFilters()
-    }, [filters])
+    }, [])
 
 
     const addFilter = (newFfilter) => {

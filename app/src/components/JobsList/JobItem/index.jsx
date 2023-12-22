@@ -1,35 +1,38 @@
-import FilterButton from "../FilterButton"
+import FilterButton from "./FilterButton"
+import styles from './JobItem.module.css'
 
 const JobItem = ({ job }) => {
     return (
-        <li>
-            <img src={ job.logo } alt="" />
+        <li className={ styles.jobItem }>
+            <img className={ styles.job__logo } src={ job.logo } alt="" />
 
-            <div>
-                <h2>{ job.company }</h2>
+            <div className={ styles.job__header }>
+                <h2 className={ styles.job__company }>{ job.company }</h2>
 
-                <div>
+                <div className={ styles.job__tags }>
                     {job.new &&
-                        <span>NEW</span>
+                        <span className={ styles.tagNew }>NEW</span>
                     }
 
                     {job.featured &&
-                        <span>FEATURED</span>
+                        <span className={ styles.tagFeatured }>FEATURED</span>
                     }
                 </div>
             </div>
 
-            <h3>{ job.position }</h3>
+            <h3 className={ styles.job__position }>{ job.position }</h3>
 
-            <div>
+            <div className={ styles.job__info }>
                 <span>{ job.postedAt }</span>
+                <span>•</span>
                 <span>{ job.contract }</span>
+                <span>•</span>
                 <span>{ job.location }</span>
             </div>
 
             <hr />
 
-            <div>
+            <div className={ styles.job__filters }>
                 <FilterButton 
                     category='role'
                     value={ job.role }

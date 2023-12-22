@@ -10,6 +10,8 @@
 .filtersContainer{
     align-items: center;
     background-color: var(--clr-white);
+    border-radius: .25rem;
+    box-shadow: var(--shadow);
     display: flex;
     justify-content: space-between;
     padding: 1rem;

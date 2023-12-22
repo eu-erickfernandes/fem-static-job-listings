@@ -1,0 +1,74 @@
+.jobItem{
+    background-color: var(--clr-white);
+    border-left: 5px solid var(--clr-primary);
+    border-radius: .25rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.5rem;
+    padding-top: 2rem;
+    position: relative;
+}
+
+.job__logo{
+    aspect-ratio: 1;
+    position: absolute;
+    top: -1.5rem;
+    width: 3rem;
+}
+
+.job__header{
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+    font-weight: var(--fw-bold);
+}
+
+.job__company{
+    color: var(--clr-primary);
+}
+
+.job__tags{
+    display: flex;
+    gap: .5rem;
+
+    & span{
+       border-radius: 100vw;
+       color: var(--clr-white);
+       padding-bottom: .5rem;
+       padding-inline: .5rem;
+       padding-top: .75rem;
+    }
+}
+
+.tagNew{
+    background-color: var(--clr-primary);
+}
+
+.tagFeatured{
+    background-color: var(--clr-very-dark-cyan);
+}
+
+.job__position{
+    color: var(--clr-very-dark-cyan);
+    font-weight: var(--fw-bold);
+}
+
+.job__info{
+    color: var(--clr-dark-cyan);
+    display: flex;
+    gap: .5rem;
+}
+
+hr{
+    margin: 0;
+}
+
+.job__filters{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

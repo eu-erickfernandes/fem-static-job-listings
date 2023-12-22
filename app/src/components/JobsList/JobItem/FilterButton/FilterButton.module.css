@@ -1,0 +1,9 @@
+.filterButton{
+    border: none;
+    border-radius: .25rem;
+    background-color: var(--clr-cyan);
+    color: var(--clr-primary);
+    font-size: 1rem;
+    font-weight: var(--fw-bold);
+    padding: .5rem;
+}

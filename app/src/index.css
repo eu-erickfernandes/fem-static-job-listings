@@ -15,6 +15,9 @@
     /* TIPOGRAPHY */
     --fw-regular: 500;
     --fw-bold: 700;
+
+    /* SHADOW */
+    --shadow: 0 4px 8px 0px hsla(180, 29%, 50%, .4);
 }
 
 body, body *{
